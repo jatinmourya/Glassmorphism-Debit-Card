@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+section {
+  height: 100%;
+  background-color: #1c1c25;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section::before {
+  content: "";
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#921b79), to(#0575e6));
+  background: linear-gradient(#921b79, #0575e6);
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 40%;
+  top: 40%;
+}
+
+section::after {
+  content: "";
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3d921b), to(#0575e6));
+  background: linear-gradient(#3d921b, #0575e6);
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 60%;
+  top: 60%;
+}
+
+.card {
+  height: 320px;
+  z-index: 1;
+  width: 500px;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+
+.card .view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card:hover .front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card .view.back {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card:hover .view.back {
+  -webkit-transform: rotateY(-360deg);
+          transform: rotateY(-360deg);
+}
+
+.front {
+  padding: 30px;
+}
+
+.front .bd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.front .bd .bank {
+  font-style: italic;
+}
+
+.front .bd .bank,
+.front .bd .debit {
+  font-weight: 400;
+}
+
+.front .chip {
+  border-radius: 8px;
+  height: 45px;
+  margin: 30px 0 15px 0;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.front .number {
+  letter-spacing: 10px;
+  text-shadow: 0 3px black;
+}
+
+.front .valid span:first-child {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.front .valid span:last-child {
+  font-size: 17px;
+  margin: 0 0 0 20px;
+}
+
+.front .valid,
+.front .cardHolder {
+  margin: 25px 0;
+}
+
+.front .cardHolder {
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+
+.front::before {
+  content: "";
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  opacity: 0.8;
+}
+
+.front::after {
+  content: "";
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background-color: orangered;
+  position: absolute;
+  bottom: 40px;
+  right: 90px;
+  opacity: 0.8;
+}
+
+.back {
+  padding: 40px 0;
+}
+
+.back .blackbar {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: black;
+}
+
+.back .cvvtext {
+  padding: 0 30px;
+}
+
+.back .cvvtext p {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.back .cvvtext .bar {
+  margin: 8px 0 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.back .cvvtext .bar .WhiteBar {
+  height: 35px;
+  width: 90%;
+  background-color: #fff;
+}
+
+.back .cvvtext .bar .cvv {
+  height: 32px;
+  padding: 0 5px;
+  font-style: italic;
+  color: #000;
+  background-color: #e2e2e2;
+}
+
+.back .text {
+  padding: 0 30px;
+  font-size: 12px;
+}
+/*# sourceMappingURL=style.css.map */
