@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Poppins';
   color: #fff;
 }
 
@@ -27,7 +26,26 @@ section {
           align-items: center;
 }
 
-section::before {
+.card {
+  height: 320px;
+  width: 500px;
+  z-index: 3;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+
+.bgs {
+  z-index: 1;
+  position: absolute;
+  height: 300px;
+  width: 490px;
+}
+
+.bgs::before {
+  z-index: -1;
   content: "";
   height: 250px;
   width: 250px;
@@ -37,11 +55,12 @@ section::before {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  left: 40%;
-  top: 40%;
+  left: 8%;
+  top: 15%;
 }
 
-section::after {
+.bgs::after {
+  z-index: -1;
   content: "";
   height: 350px;
   width: 350px;
@@ -51,23 +70,13 @@ section::after {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  left: 60%;
-  top: 60%;
-}
-
-.card {
-  height: 320px;
-  z-index: 1;
-  width: 500px;
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-perspective: 500px;
-          perspective: 500px;
+  top: 80%;
+  left: 80%;
 }
 
 .card .view {
   position: absolute;
+  z-index: 3;
   top: 0;
   left: 0;
   height: 100%;
@@ -132,8 +141,10 @@ section::after {
 }
 
 .front .number {
+  font-size: 20px;
+  font-family: 'Orbitron',sans-serif;
   letter-spacing: 10px;
-  text-shadow: 0 3px black;
+  text-shadow: 0 2px black;
 }
 
 .front .valid span:first-child {
@@ -148,7 +159,7 @@ section::after {
 
 .front .valid,
 .front .cardHolder {
-  margin: 25px 0;
+  margin: 20px 0;
 }
 
 .front .cardHolder {
@@ -226,4 +237,3 @@ section::after {
   padding: 0 30px;
   font-size: 12px;
 }
-/*# sourceMappingURL=style.css.map */
